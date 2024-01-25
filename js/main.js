@@ -9,6 +9,7 @@ let newItemName = document.getElementById("newItemName");
 
 const createShoppingList = () => {
     currentList.name = shoppingListName.value;
+    console.log(shoppingListName.value);
     currentList.items = [];
 
     // Web Service Call
@@ -19,7 +20,7 @@ const showShoppingList = () => {
     shoppingListTitle.innerHTML = currentList.name;
     shoppingListItems.innerHTML = "";
 
-   createListDiv.style.display = "none";
+    createListDiv.style.display = "none";
     shoppingListDiv.style.display = "block";
     newItemName.focus();
 
