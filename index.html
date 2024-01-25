@@ -9,19 +9,28 @@
 <body>
     <div id="createListDiv">
         <h1>Simple Shopping List</h1>
-        <input type="text" id="shoppingListName" placeholder="New List"/>
-        <button onclick="createShoppingList()">Create</button>
+        <div class="row">
+            <input type="text" id="shoppingListName" placeholder="New List"/>
+            <button onclick="createShoppingList()">Create</button>
+        </div>
     </div>   
     <div id="shoppingListDiv" style="display: none;">
         <h1 id="shoppingListTitle">New List</h1>
-        <input id="newItemName" type="text" placeholder="New Item">
-        <button>Add</button>
-         <ul id="shoppingListItems">
-            <li>Salad<button>D</button><button>C</button></li>
-            <li>Milk<button>D</button><button>C</button></li>
-            <li>Tomatoes<button>D</button><button>C</button></li>
-         </ul>
+        <div class="row">
+            <input id="newItemName" type="text" placeholder="New Item">
+            <button onclick="addItem()">Add</button>
+        </div>
+        <ul id="shoppingListItems">
+            <!-- <li class="checked">Salad</li>
+            <li>Milk</li>
+            <li>Tomatoes</li>
+            <li>Tomatoes</li>
+            <li>Tomatoes</li>
+            <li>Tomatoes</li>
+            <li>Tomatoes</li> -->
+
+        </ul>
     </div>
-   
+   <script src="js/main.js"></script>
 </body>
 </html>

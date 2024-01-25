@@ -10,9 +10,8 @@ body {
     padding: 0;
 }
 
-#createListDiv,
-#shoppingListDiv {
-    max-width: 400px;
+#createListDiv, #shoppingListDiv {
+    width: 400px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -25,51 +24,116 @@ h1 {
     color: #333;
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
 
-button {
-    width: 100%;
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
     padding: 10px;
-    background-color: #3498db;
-    color: white;
+    font-weight: 14px;    
+}
+
+.row > button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+
+
+
+#createListDiv > button, #shoppingListDiv > button {
+    width: 100%;
+    padding: 16px 50px;
+    background-color: #ff5945;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+#shoppingListItems > li> button {
+    width: 50px;
+    padding: 10px;
+    background-color: #ff5945;
+    color: #fff;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-
-
 button:hover {
     background-color: #eb0b0b;
 }
 
-ul {
+
+ul li{
     list-style-type: none;
-    max-width: 300px;
-    margin: 20px auto;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    position: relative;
 }
 
-li {
-    min-height: 20px;
-    text-align: left;
-    background-color: white;
-    color: #444;
-    padding: 5px;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ul li::before{
+   content: '';
+   position: absolute;
+   height: 28px;
+   width: 28px;
+   border-radius: 50%;
+   background-image: url("/images/unchecked.png");
+   background-size: cover;
+   background-position: center;
+   top: 12px;
+   left: 8px;
 }
 
-li button {
-    margin: 0px 3px;
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
 }
 
-.checked {
+ul li span:hover {
+    background: #edeef0;
+}
+
+
+
+ul li.checked {
+    color: #555;
     text-decoration: line-through;
 }
+
+ul li.checked::before{
+    background-image: url("/images/checked.png");
+}
+
+
